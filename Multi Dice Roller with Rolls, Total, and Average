@@ -7,6 +7,6 @@ def roll(n,D):                    # define our function 'roll' to take two argum
       k = random.randint(1,D)     # create a variable for the roll
       total += k                  # add the roll to the total
       list.append(k)              # add the roll to the list
-   print("Rolls: ", list)         # print the list of rolls
-   print("Total: ", total)        # print the total
-   print("Average: ", total/n)    # print the average (total divided by number of rolls)
+   print("Rolls:", list)          # print the list of rolls
+   print("Total:", total)         # print the total
+   print("Average:", total/n)     # print the average (total divided by number of rolls)
