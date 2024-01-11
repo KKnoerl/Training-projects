@@ -1,0 +1,12 @@
+import random                     # import the random module
+
+def roll(n,D):                    # define our function 'roll' to take two arguments 'n' for number of dice, and 'D' for how many sides (max)
+   total = 0                      # start a variable 'total' at 0, to keep the running total from each dice roll
+   list = []                      # start an empty list 'list' to store each dice roll
+   for i in range(0,n):           # create a for loop to run each dice roll
+      k = random.randint(1,D)     # create a variable for the roll
+      total += k                  # add the roll to the total
+      list.append(k)              # add the roll to the list
+   print("Rolls: ", list)         # print the list of rolls
+   print("Total: ", total)        # print the total
+   print("Average: ", total/n)    # print the average (total divided by number of rolls)
