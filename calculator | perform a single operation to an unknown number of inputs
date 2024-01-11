@@ -1,0 +1,53 @@
+def add(*a):                                                # define a function 'add' to take an unknown amount of inputs '*a'
+   print(sum(a))                                            # add them all together by taking the sum of a
+   
+def subtract(*a):                                           # define a function 'subtract' to take an unknown amount of inputs '*a'
+   total = a[0]                                             # create a variable 'total' to keep the running total beginning with a indexed at 0
+   for i in range(1,len(a)):                                # create a for loop where 'i' goes through each 'a' value
+      total -= a[i]                                         # recalculate the total, subtracting 'a' indexed at 'i'
+   print(total)                                             # when the loop is completed, print the final total
+   
+def multiply(*a):                                           # 'multiply'
+   total = a[0]
+   for i in range(1,len(a)):
+      total *= a[i]                                         # change to '*='
+   print(total)
+   
+def divide(*a):                                             # 'divide'
+   total = a[0]
+   for i in range(1,len(a)):
+      if a[i] == 0:                                         # add a divide by zero check when 'a' indexed at 'i' is equal to 0
+         print("Divide by Zero Error: value skipped")       # add an error message
+         continue                                           # continue will skip this '0' and continue with the rest of the input values 'a'
+      else: total /= a[i]                                   # otherwise do the total like normal with '/='
+   print(total)
+   
+def intdivide(*a):                                          # 'intdivide'
+   total = a[0]
+   for i in range(1,len(a)):
+      if a[i] == 0:
+         print("Divide by Zero Error: value skipped")
+         continue
+      else: total //= a[i]                                  # '//='
+   print(total)
+   
+def modulus(*a):                                            # 'modulus'
+   total = a[0]
+   for i in range(1,len(a)):
+      if a[i] == 0:
+         print("Divide by Zero Error: value skipped")
+         continue
+      else: total %= a[i]                                   # '%='
+   print(total)
+   
+def exponent(*a):                                           # 'exponent'
+   total = a[0]
+   for i in range(1,len(a)):
+      total **= a[i]                                        # '**='
+   print(total)
+   
+def root(*a):                                               # 'root'
+   total = a[0]
+   for i in range(1,len(a)):
+      total **= 1/a[i]                                      # a root is an exponent of 1 over the value so '**= 1/'
+   print(total)
