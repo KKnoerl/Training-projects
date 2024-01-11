@@ -1,0 +1,4 @@
+import random                    # import the 'random' module
+
+def roll(n):                     # define the function 'roll' to take one argument 'n'
+   print(random.randint(1,n))    # print the result of randint (random integer, from the 'random' module) from min 1 to max 'n'
