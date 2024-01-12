@@ -1,0 +1,25 @@
+answer = "Type the solution here!" # Symbols and numbers are shown 
+guesses = input()                         # input should be a series of letters
+
+ANSWER = answer.upper()                   # create a string of the answer in uppercase, so case doesn't affect guessing
+GUESS = list(guesses.upper())             # create a list, separating each guess, as uppercase so case doesn't affect guessing
+game = ["_ "] * len(answer)               # create a list of underscores equal to the length of the "answer"/"ANSWER"
+wrong = ""                                # create an empty string to place incorrect "GUESS" characters
+
+for i in range(len(answer)):              # create a for loop to check each letter in "answer"
+   if answer[i].isalpha() == False:       # if the character in "answer" is not a letter
+      game[i] = answer[i] #+ " "          # change the underscore in that place to that character (numbers, symbols, spaces)
+   for k in range(len(GUESS)):            # create a for loop to run through each character in "GUESS"
+      if GUESS[k] == ANSWER[i]:           # if that "GUESS" character matches that "ANSWER" character
+         game[i] = answer[i]              # change the underscore in that spot to the letter from "answer" ("answer" to put case back to normal)
+
+for i in range(len(GUESS)):               # create a for loop to run through each character in "GUESS"
+   if ANSWER.find(GUESS[i]) == -1:        # if that "GUESS" is not found at all in "ANSWER" (not found is -1)
+      wrong += GUESS[i] + " "             # add that "GUESS" and a space to the "wrong" string
+         
+gameboard = ""                            # create an empty string (to convert list "game" to string "gameboard" for formatting
+for i in range(len(game)):                # create a for loop to run through each character in "answer"/"ANSWER"/"game"
+   gameboard += game[i]                   # add each character from "game" to the string "gameboard"
+         
+print(gameboard)                          # output to show the string gameboard
+print("Incorrect:", wrong)                # output to show the string of incorrect guesses
