@@ -1,0 +1,15 @@
+import random                           # import the random module
+   
+def StatRoll():                         # define our function "StatRoll" to take zero arguments "()"
+   for i in range(6):                   # create a for loop to print outputs for each of the 6 stats
+      total = 0                         # start a variable 'total' at 0, to keep the running total from each dice roll
+      list = []                         # start an empty list 'list' to store each dice roll
+      for i in range(4):                # create a for loop to roll each dice 4 times
+         k = random.randint(1,6)        # create a variable to store the roll
+         total += k                     # add the roll to the total
+         list.append(k)                 # add the roll to the list
+      print("Rolls:", list)             # print the list of rolls
+      print("Stat:", total-min(list))   # print the total droping the lowest roll
+      print("")                         # print a spacer for formatting
+      
+StatRoll()                              # run the function
